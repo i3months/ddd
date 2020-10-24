@@ -30,13 +30,13 @@ namespace _22.SnsApplication.Circles
 
         public CircleGetSummariesResult GetSummaries(CircleGetSummariesCommand command)
         {
-            // この段階ではデータを取得しない
+            // 아직은 데이터를 받아오지 않았다
             var all = circleRepository.FindAll();
-            // ページング処理は条件を付与しているに過ぎないためデータを取得しない
+            // 야기서는 페이징 처리 조건만 부여한 것으로 데이터를 받지는 않았다
             var chunk = all
                 .Skip((command.Page - 1) * command.Size)
                 .Take(command.Size);
-            // ここではじめてコレクションが処理されるため、条件に応じてデータ取得がされる
+            // 이 시점에서 처음으로 컬렉션의 요소에 접근했으므로 조건에 따라 데이터를 받아온다
             var summaries = chunk
                 .Select(x =>
                 {

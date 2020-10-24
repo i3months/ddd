@@ -30,7 +30,7 @@ namespace _03.SnsDomain.Models.Circles
         public User Owner => owner;
         public List<UserId> Members => members;
 
-        // ユーザのリポジトリを受け取る？
+        // 엔티티가 사용자 리포지토리를 갖는다?
         public bool IsFull(IUserRepository userRepository)
         {
             var users = userRepository.Find(Members);

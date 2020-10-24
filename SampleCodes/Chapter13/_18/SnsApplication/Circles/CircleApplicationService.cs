@@ -31,16 +31,16 @@ namespace _18.SnsApplication.Circles
 
         public CircleGetSummariesResult GetSummaries(CircleGetSummariesCommand command)
         {
-            // 全件取得して
+            // 모든 서클의 목록을 받아옴
             var all = circleRepository.FindAll();
-            // その後にページング
+            // 페이징 처리
             var circles = all
                 .Skip((command.Page - 1) * command.Size)
                 .Take(command.Size);
             var summaries = new List<CircleSummaryData>();
             foreach(var circle in circles)
             {
-                // サークルのオーナーを改めて検索
+                // 각 서클의 서클장에 해당하는 사용자 정보 검색
                 var owner = userRepository.Find(circle.Owner);
                 summaries.Add(new CircleSummaryData(circle.Id.Value, owner.Name.Value));
             }

@@ -32,7 +32,7 @@ namespace _02.SnsApplication.Circles
             var circle = circleRepository.Find(circleId);
 
             var users = userRepository.Find(circle.Members);
-            // サークルに所属しているプレミアムユーザの人数により上限が変わる
+            // 서클에 소속된 프리미엄 사용자의 수에 따라 최대 인원이 결정됨
             var premiumUserNumber = users.Count(user => user.IsPremium);
             var circleUpperLimit = premiumUserNumber < 10 ? 30 : 50;
             if (circle.CountMembers() >= circleUpperLimit)
@@ -44,7 +44,7 @@ namespace _02.SnsApplication.Circles
             var member = userRepository.Find(memberId);
             if (member == null)
             {
-                throw new UserNotFoundException(memberId, "ユーザが見つかりませんでした。");
+                throw new UserNotFoundException(memberId, "사용자를 찾지 못했음");
             }
 
             circle.Join(member);

@@ -43,7 +43,7 @@ namespace _09.SnsApplication.Circles
             var member = userRepository.Find(memberId);
             if (member == null)
             {
-                throw new UserNotFoundException(memberId, "ユーザが見つかりませんでした。");
+                throw new UserNotFoundException(memberId, "사용자를 찾지 못했음");
             }
 
             circle.Join(member);

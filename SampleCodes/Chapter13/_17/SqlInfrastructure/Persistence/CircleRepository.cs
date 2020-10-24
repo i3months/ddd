@@ -41,7 +41,7 @@ namespace _17.SqlInfrastructure.Persistence
                     var circles = new List<Circle>();
                     while (reader.Read())
                     {
-                        // インスタンスを生成して条件に合うか確認している（合わなければ捨てられる）
+                        // 인스턴스를 생성해 조건에 부합하는지 확인(조건을 만족하지 않으면 버림)
                         var circle = CreateInstance(reader);
                         if (specification.IsSatisfiedBy(circle))
                         {

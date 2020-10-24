@@ -29,7 +29,7 @@ namespace _13.SnsApplication.Users
             var user = userRepository.Find(id);
             if (user == null)
             {
-                throw new UserNotFoundException(id, "ユーザが見つかりませんでした。");
+                throw new UserNotFoundException(id, "사용자를 찾지 못했음");
             }
 
             var data = new UserData(user);
@@ -46,8 +46,8 @@ namespace _13.SnsApplication.Users
 
         public void Register(UserRegisterCommand command)
         {
-            // トランザクションスコープを生成する
-            // using句のスコープ内でコネクションが開かれると自動的にトランザクションが開始される
+            // 트랜잭션 범위를 생성함
+            // using 문의 범위 안에서 커넥션을 열면 자동으로 트랜잭션이 시작된다
             using (var transaction = new TransactionScope())
             {
                 var name = new UserName(command.Name);
@@ -55,11 +55,11 @@ namespace _13.SnsApplication.Users
 
                 if (userService.Exists(user))
                 {
-                    throw new CanNotRegisterUserException(user, "ユーザは既に存在しています。");
+                    throw new CanNotRegisterUserException(user, "이미 등록된 사용자임");
                 }
 
                 userRepository.Save(user);
-                // 処理を反映する際にはコミット処理を行う
+                // 실제 데이터에 반영하기 위해 커밋
                 transaction.Complete();
             }
         }
@@ -82,7 +82,7 @@ namespace _13.SnsApplication.Users
 
                     if (userService.Exists(user))
                     {
-                        throw new CanNotRegisterUserException(user, "ユーザは既に存在しています。");
+                        throw new CanNotRegisterUserException(user, "이미 등록된 사용자임");
                     }
                 }
 

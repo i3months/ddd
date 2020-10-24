@@ -31,7 +31,7 @@ namespace _16.SnsApplication.Circles
         public CircleGetRecommendResult GetRecommend(CircleGetRecommendRequest request)
         {
             var circleRecommendSpecification = new CircleRecommendSpecification(now);
-            // リポジトリに仕様を引き渡して抽出（フィルタリング）
+            // 리포지토리에 명세를 전달해 추천 서클을 추려냄(필터링)
             var recommendCircles = circleRepository.Find(circleRecommendSpecification)
                 .Take(10)
                 .ToList();

@@ -31,7 +31,7 @@ namespace _11.SnsApplication.Circles
         
         public CircleGetRecommendResult GetRecommend(CircleGetRecommendRequest request)
         {
-            // リポジトリに依頼するだけ
+            // 리포지토리에 모두 맡기면 된다
             var recommendCircles = circleRepository.FindRecommended(now);
             return new CircleGetRecommendResult(recommendCircles);
         }
