@@ -6,7 +6,7 @@ namespace Core.Model.Users
     {
         private UserName name;
 
-        // 識別子 は UserId の まま
+        // UserId를 그대로 식별자로 사용 중
         public User(UserId id, UserName name)
         {
             if (id == null) throw new ArgumentNullException(nameof(id));
@@ -18,7 +18,7 @@ namespace Core.Model.Users
 
         public UserId Id { get; }
 
-        // 識別子 と なっ た UserName が 変更 でき て しまう
+        // 이젠 UserName이 식별자인데 식별자를 변경한다
         public void ChangeName(UserName name)
         {
             if (name == null) throw new ArgumentNullException(nameof(name));
