@@ -22,7 +22,7 @@ Node.js 12.14.1
 https://docs.microsoft.com/ko-kr/visualstudio/install/install-visual-studio
 
 설치를 시작하면 워크로드를 선택해야 합니다.
-아래 화면과 같이 "ASP.NET과 웹 개발"을 선택하세요.
+아래 화면과 같이 "ASP.NET 및 웹 개발"을 선택하세요.
 
 
 ![vsinstaller](https://github.com/flourscent/itddd/blob/images/vs_installer.png)
@@ -41,14 +41,14 @@ https://nodejs.org/ko
 
 ![LoadingProject](https://github.com/flourscent/itddd/blob/images/load_project_1.png)
 
-메뉴의 "프로젝트 열기"에서 .sln 파일을 선택하면 관련된 프로젝트가 IDE에 로딩됩니다.
+메뉴의 "프로젝트 또는 솔루션 열기"에서 .sln 파일을 선택하면 관련된 프로젝트가 IDE에 로딩됩니다.
 
 ![LoadingProject](https://github.com/flourscent/itddd/blob/images/load_project_2.png)
 
 ## 실행하기
 
 애플리케이션을 실행할 때는 Visual Studio에서 디버그 모드로 실행합니다.
-타겟을 WebApplication으로 하고 디버그 실행(F5 또는 화면에서 IIS Express 버튼 클릭)하면 예제 웹 애플리케이션이 실행됩니다.
+타겟을 WebApplication으로 하고 디버그 실행(F5 또는 화면에서 "IIS Express" 버튼 클릭)하면 예제 웹 애플리케이션이 실행됩니다.
 
 ![LoadingProject](https://github.com/flourscent/itddd/blob/images/load_project_3.png)
 

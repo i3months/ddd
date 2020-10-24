@@ -1,33 +1,32 @@
 # ITDDD
 
-『ドメイン駆動設計入門 ボトムアップでわかる!ドメイン駆動設計の基本』第１４章のサンプル集です。
-また、書籍刊行後に特別に用意した１～１３章のサンプルコードもダウンロードできます。
+"도메인 주도 설계 철저 입문 : 코드와 패턴으로 밑바닥부터 이해하는 DDD"의 14장 예제 코드입니다.
+1장부터 13장에 실린 예제 코드도 보실 수 있습니다.
 
-# 各ディレクトリ
+# 각 디렉토리의 내용
 
 ## Layered
 
-https://github.com/nrslib/itddd/tree/master/Layered
+https://github.com/flourscent/itddd/tree/master/Layered
 
-レイヤードアーキテクチャを意識した構成です。  
-プレゼンテーション層、ドメイン層、アプリケーション層、インフラストラクチャ層がそれぞれ別プロジェクトになっています。  
+계층형 아키텍처를 준수해 구성한 코드입니다.
+프레젠테이션 계층, 도메인 계층, 애플리케이션 계층, 인프라스트럭쳐 계층이 별도의 프로젝트로 구성돼 있습니다.
 
 ## Layered_UsingInternal
 
-https://github.com/nrslib/itddd/tree/master/Layered_UsingInternal
+https://github.com/flourscent/itddd/tree/master/Layered_UsingInternal
 
-レイヤードアーキテクチャを意識した構成です。  
-Layered との違いは、internal 修飾子を活用して、メソッドにアクセス制限を加えることで、意図しないメソッド呼び出しを抑制しています。  
+계층형 아키텍처를 준수해 구성한 코드입니다.
+internal 접근제어자를 활용해 메서드에 대한 접근을 통제하여 의도하지 않은 메서드 호출을 차단한 것이
+Layerd 디렉토리의 코드와 차이점입니다.
 
 ## CleanLike
 
-https://github.com/nrslib/itddd/tree/master/CleanLike
+https://github.com/flourscent/itddd/tree/master/CleanLike
 
-クリーンアーキテクチャを意識した構成です。  
-すべてのユースケースは別クラスで実装されているため、疎結合な作りになっています。  
-クリーンアーキテクチャのプロジェクト構成に関する詳しい説明は以下の URL を参考にしてください。  
-https://nrslib.com/clean-architecture/
+클린 아키텍처를 준수해 구성한 코드입니다.
+모든 유스케이스가 별도의 클래스로 구현되었으므로 코드의 결합이 느슨하게 구현돼 있습니다.
 
 ## SampleCodes
 
-各章のサンプルコードです。
+14장을 제외한 나머지 장에 실린 예제 코드입니다.
