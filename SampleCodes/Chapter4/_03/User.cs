@@ -16,10 +16,10 @@ namespace _03
             this.name = name;
         }
 
-        // 追加した重複確認のふるまい
+        // 사용자명 중복 여부 확인 코드 추가
         public bool Exists(User user)
         {
-            // 重複を確認するコード
+            // 사용자명 중복을 확인하는 코드
             return false;
         }
     }

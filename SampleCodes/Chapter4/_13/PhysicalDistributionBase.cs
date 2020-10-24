@@ -1,6 +1,6 @@
 ﻿namespace _13
 {
-    // 処理の具体的な内容は主題ではないので省略
+    // 구체적인 처리 내용이 주제가 아니므로 생략
     class PhysicalDistributionBase
     {
         public Baggage Ship(Baggage baggage)

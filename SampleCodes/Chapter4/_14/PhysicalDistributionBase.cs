@@ -1,6 +1,6 @@
 ﻿namespace _14
 {
-    // 処理の具体的な内容は主題ではないので省略
+    // 구체적인 처리 내용이 주제가 아니므로 생략
     class PhysicalDistributionBase
     {
         public Baggage Ship(Baggage baggage)
@@ -18,7 +18,7 @@
             var shippedBaggage = Ship(baggage);
             to.Receive(shippedBaggage);
 
-            // たとえば配送の記録は必要だろうか
+            // 운송 기록 같은 것도 필요할 것이다
         }
     }
 }

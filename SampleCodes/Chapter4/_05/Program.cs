@@ -12,7 +12,7 @@ namespace _05
             var userName = new UserName("naruse");
             var user = new User(userId, userName);
 
-            // ドメインサービスに問い合わせ
+            // 사용자명 중복 확인용 객체에 중복 여부를 문의함
             var duplicateCheckResult = userService.Exists(user);
             Console.WriteLine(duplicateCheckResult);
         }
