@@ -27,7 +27,7 @@ namespace _04_to_12.Application.Users
             var user = userRepository.Find(id);
             if (user == null)
             {
-                throw new UserNotFoundException(id, "ユーザが見つかりませんでした。");
+                throw new UserNotFoundException(id, "사용자를 찾지 못했음");
             }
 
             var data = new UserData(user);
@@ -50,7 +50,7 @@ namespace _04_to_12.Application.Users
                 var user = new User(name);
                 if (userService.Exists(user))
                 {
-                    throw new CanNotRegisterUserException(user, "ユーザは既に存在しています。");
+                    throw new CanNotRegisterUserException(user, "이미 등록된 사용자임");
                 }
 
                 userRepository.Save(user);
@@ -79,7 +79,7 @@ namespace _04_to_12.Application.Users
 
                     if (userService.Exists(user))
                     {
-                        throw new CanNotRegisterUserException(user, "ユーザは既に存在しています。");
+                        throw new CanNotRegisterUserException(user, "이미 등록된 사용자임");
                     }
                 }
 

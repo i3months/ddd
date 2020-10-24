@@ -17,12 +17,12 @@ namespace _13_to_17.Tests.Users
             var userService = new UserService(userRepository);
             var userApplicationService = new UserApplicationService(userRepository, userService);
 
-            // 最短のユーザ名（３文字）のユーザが正常に生成できるか
+            // 사용자명의 최소 길이(3글자)를 만족하는 사용자 등록이 정상적으로 완료되는지 확인
             var userName = "123";
             var minUserNameInputData = new UserRegisterCommand(userName);
             userApplicationService.Register(minUserNameInputData);
 
-            // ユーザが正しく保存されているか
+            // 사용자 정보가 잘 저장됐는지 확인
             var createdUserName = new UserName(userName);
             var createdUser = userRepository.Find(createdUserName);
             Assert.IsNotNull(createdUser);
@@ -35,12 +35,12 @@ namespace _13_to_17.Tests.Users
             var userService = new UserService(userRepository);
             var userApplicationService = new UserApplicationService(userRepository, userService);
             
-            // 最長のユーザ名（２０文字）のユーザが正常に生成できるか
+            // 사용자명의 최장 길이(20글자)를 만족하는 사용자 등록이 정상적으로 완료되는지 확인
             var userName = "12345678901234567890";
             var maxUserNameInputData = new UserRegisterCommand(userName);
             userApplicationService.Register(maxUserNameInputData);
 
-            // ユーザが正しく保存されているか
+            // 사용자 정보가 잘 저장됐는지 확인
             var createdUserName = new UserName(userName);
             var maxUserNameUser = userRepository.Find(createdUserName);
             Assert.IsNotNull(maxUserNameUser);
@@ -53,12 +53,12 @@ namespace _13_to_17.Tests.Users
             var userService = new UserService(userRepository);
             var userApplicationService = new UserApplicationService(userRepository, userService);
 
-            // 最短のユーザ名（３文字）のユーザが正常に生成できるか
+            // 사용자명의 최소 길이(3글자)를 만족하는 사용자 등록이 정상적으로 완료되는지 확인
             var userName = "123";
             var minUserNameInputData = new UserRegisterCommand(userName);
             userApplicationService.Register(minUserNameInputData);
 
-            // ユーザが正しく保存されているか
+            // 사용자 정보가 잘 저장됐는지 확인
             var createdUser = userRepository.Store.Values
                 .FirstOrDefault(user => user.Name.Value == userName);
             Assert.IsNotNull(createdUser);

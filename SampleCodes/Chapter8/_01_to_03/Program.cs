@@ -43,15 +43,16 @@ namespace _01_to_03
         {
             // IoC Container
             var serviceCollection = new ServiceCollection();
-            // 依存関係の登録を行う（以下コメントにて補足）
-            // IUserRepositoryが要求されたらInMemoryUserRepositoryを生成して引き渡す（生成したインスタンスはその後使いまわされる）
+            // 의존 관계 등록 (주석으로 보충 설명)
+            // IUserRepository가 처음 필요해지면 InMemoryUserRepository를 생성해
+            // 전달함 (생성된 인스턴스는 이후로도 다시 씀)
             serviceCollection.AddSingleton<IUserRepository, InMemoryUserRepository>();
-            // UserServiceが要求されたら都度UserServiceを生成して引き渡す
+            // UserService가 필요해지면 매번 인스턴스를 생성해 전달함
             serviceCollection.AddTransient<UserService>();
-            // UserApplicationServiceが要求されたら都度UserApplicationServiceを生成して引き渡す
+            // UserApplicationService가 필요해지면 매번 인스턴스를 생성해 전달함
             serviceCollection.AddTransient<UserApplicationService>();
-            // 依存解決を行うプロバイダの生成
-            // プログラムはserviceProviderに依存の解決を依頼する
+            // 의존 관계 해소를 위한 프로바이더 생성
+            // 프로그램은 serviceProvider에 의존 관계 해소를 요청함
             serviceProvider = serviceCollection.BuildServiceProvider();
         }
     }

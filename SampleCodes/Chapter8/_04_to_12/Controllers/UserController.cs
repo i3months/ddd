@@ -18,7 +18,7 @@ namespace _04_to_12.Controllers
     {
         private readonly UserApplicationService userApplicationService;
 
-        // IoC Containerと連携して依存の解決が行われる
+        // IoC Container와의 연동을 통해 의존 관계를 해소한다
         public UserController(UserApplicationService userApplicationService)
         {
             this.userApplicationService = userApplicationService;
