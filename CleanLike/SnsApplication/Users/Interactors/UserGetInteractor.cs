@@ -19,7 +19,7 @@ namespace SnsApplication.Users.Interactors
             var user = userRepository.Find(id);
             if (user == null)
             {
-                throw new UserNotFoundException(id, "ユーザが見つかりませんでした。");
+                throw new UserNotFoundException(id, "사용자를 찾지 못했음");
             }
 
             var data = new UserData(user.Id.Value, user.Name.Value);

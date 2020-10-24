@@ -34,7 +34,7 @@ namespace SnsApplication.Circles.Interactors
 
                 if (circleService.Exists(circle))
                 {
-                    throw new CanNotRegisterCircleException(circle, "サークルは既に存在しています。");
+                    throw new CanNotRegisterCircleException(circle, "이미 등록된 서클임");
                 }
             }
 

@@ -30,14 +30,14 @@ namespace SnsApplication.Circles.Interactors
             var owner = userRepository.Find(ownerId);
             if (owner == null)
             {
-                throw new UserNotFoundException(ownerId, "サークルのオーナーとなるユーザが見つかりませんでした。");
+                throw new UserNotFoundException(ownerId, "서클장이 될 사용자가 없음");
             }
 
             var name = new CircleName(inputData.Name);
             var circle = circleFactory.Create(name, owner);
             if (circleService.Exists(circle))
             {
-                throw new CanNotRegisterCircleException(circle, "サークルは既に存在しています。");
+                throw new CanNotRegisterCircleException(circle, "이미 등록된 서클임");
             }
 
             circleRepository.Save(circle);

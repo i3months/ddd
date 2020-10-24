@@ -1,71 +1,79 @@
 # ITDDD
 
-『ドメイン駆動設計入門 ボトムアップでわかる!ドメイン駆動設計の基本』第１４章のサンプルです。  
-ASP.NET Core で構築された Web サイトシステムです。  
-レイヤードアーキテクチャを意識した構成になっています。  
+"도메인 주도 설계 철저 입문" 14장의 예제 코드로,
+ASP.NET Core를 사용해 만들어진 웹 사이트입니다.
+
+계층형 아키텍처의 모듈 구성을 따라 구성돼 있습니다.
+자세한 구성 내용은 책 본문을 참고 하십시오.
 
 # Environment
 
 .NET Core 3.1  
 Node.js 12.14.1
 
-# プロジェクトの実行
+# 실행 환경
 
-## 実行環境の準備
+.NET Core 3.1  
+Node.js 12.14.1  
 
-プロジェクトを実行する場合に Microsoft が提供している IDE である Visual Studio を利用する方法がもっとも手軽です。  
-下記 URL に従って、任意のバージョンの Visual Studio Community をインストールしてください。
+# 프로젝트 실행 방법
 
-https://docs.microsoft.com/ja-jp/visualstudio/install/install-visual-studio
+## 실행 환경 구축
 
-なお、インストール時、ワークロードの選択が要求されます。  
-次の画像のように「ASP.NET と Web 開発」を選択してください。
+프로젝트를 실행하려면 마이크로소프트의 IDE인 Visual Studio를 사용하는 것이 가장 쉽습니다.
+아래 URL에서 Visual Studio Community를 설치하십시오. 버전은 무관합니다.
 
-![vsinstaller](https://github.com/nrslib/itddd/blob/images/vs_installer.png)
+https://docs.microsoft.com/ko-kr/visualstudio/install/install-visual-studio
 
-### Node.jsの準備
+설치를 시작하면 워크로드를 선택해야 합니다.
+아래 화면과 같이 "ASP.NET과 웹 개발"을 선택하세요.
 
-プロジェクトはNode.jsが利用されています。  
-下記URLよりインストーラーを入手して、インストーラーの指示に従いNode.jsをインストールしてください。  
-※バージョン12.14.1で動作確認をしています。  
-https://nodejs.org/ja/
+![vsinstaller](https://github.com/flourscent/itddd/blob/images/vs_installer.png)
 
-## ソリューションを読み込む
 
-プロジェクトを読み込むには Visual Studio を起動して .sln ファイルを指定してソリューションを開きます。  
-次の画像は Visual Studio 2019 起動時のスタートメニューです。  
+### Node.js 설치하기
 
-![LoadingProject](https://github.com/nrslib/itddd/blob/images/load_project_1.png)
+이 프로젝트는 Node.js를 사용합니다.
+아래 URL에서 인스톨러를 내려받고 실행한 다음 인스톨러의 지시에 따라 Node.js를 설치하십시오.
+※버전 12.14.1에서 동작 확인 되었습니다.
+https://nodejs.org/ko
 
-「プロジェクトやソリューションを開く」を選択し、.sln ファイルを選択すると関連するプロジェクトが IDE 上に読み込まれます。  
+## 솔루션 열기
 
-![LoadingProject](https://github.com/nrslib/itddd/blob/images/load_project_2.png)
+프로젝트를 열려면 Visual Studio를 실행하고 .sln 파일을 선택해 솔루션을 엽니다.
+다음 화면은 Visual Studio 2019를 실행한 시작 메뉴입니다.
 
-## 実行
+![LoadingProject](https://github.com/flourscent/itddd/blob/images/load_project_1.png)
 
-システムを実行する際には Visual Studio 上でデバッグ実行します。  
-WebApplication にターゲットを合わせて、デバッグ実行（F5 もしくは画像の IIS Express ボタンを押下）するとサンプルの Web サイトが立ち上がります。  
+메뉴의 "프로젝트 열기"에서 .sln 파일을 선택하면 관련된 프로젝트가 IDE에 로딩됩니다.
 
-![LoadingProject](https://github.com/nrslib/itddd/blob/images/load_project_3.png)
+![LoadingProject](https://github.com/flourscent/itddd/blob/images/load_project_2.png)
 
-# システムの設定
+## 실행하기
 
-システムにはデータベースを使用するか否かの設定を行う手段が準備されています。  
+애플리케이션을 실행할 때는 Visual Studio에서 디버그 모드로 실행합니다.
+타겟을 WebApplication으로 하고 디버그 실행(F5 또는 화면에서 IIS Express 버튼 클릭)하면 예제 웹 애플리케이션이 실행됩니다.
+
+![LoadingProject](https://github.com/flourscent/itddd/blob/images/load_project_3.png)
+
+# 시스템 설정
+
+웹 사이트에서 데이터베이스 사용 여부를 설정할 수 있는 수단입니다.
 
 ## Dependency Injection
 
-IoC Containerに対するインジェクションモジュールの選択肢は次の３種類用意してあります。  
+IOC Container에 대한 인젝션 모듈은 3가지 중 하나를 선택할 수 있습니다. 
 
- - インメモリで動作するモジュール
- - SQL 文を利用したモジュール
- - Entity Framework を用いたモジュール
- 
-どのモジュールを利用するかの設定はプロダクション用設定の appsettings.json とデバッグ用設定の appsetting.Development.json によって制御できます。  
+ - 인메모리 동작 모듈
+ - SQL 쿼리를 사용하는 모듈
+ - EntityFramework를 사용하는 모듈
 
-### インメモリで動作するモジュール
+사용할 모듈 설정은 appsettings.json(운영 모드 설정 파일)과 appsettings.Developmoent.json(디버그 모드 설정 파일)에서 설정할 수 있습니다.
 
-次のように appsettings.json / asppsetting.Development.json で InMemoryModuleDependencySetup を指定してください。  
-※デフォルトはこの設定がされています。  
+### 인메모리 동작 모듈
+
+appsettings.json / appsettings.Development.json 파일에서 다음과 같이 설정하십시오.
+※이 설정이 기본값입니다.
 
 ```
 "Dependency": {
@@ -73,10 +81,10 @@ IoC Containerに対するインジェクションモジュールの選択肢は�
 }
 ```
 
-### SQL 文を利用したモジュール
+### SQL 쿼리를 사용하는 모듈
 
-次のように appsettings.json / asppsetting.Development.json で SqlConnectionDependencySetup を指定してください。  
-この設定はデータベースを利用するためデータベースとテーブルを準備する（後述）必要があります。  
+appsettings.json / appsettings.Development.json 파일에서 다음과 같이 설정하십시오.
+이 설정을 사용하려면 데이터베이스와 테이블을 미리 준비해야(뒤에 설명함) 합니다.
 
 ```
 "Dependency": {
@@ -84,10 +92,10 @@ IoC Containerに対するインジェクションモジュールの選択肢は�
 }
 ```
 
-### Entity Framework を用いたモジュール
+### EntityFramework를 사용하는 모듈
 
-次のように appsettings.json / asppsetting.Development.json で EFDependencySetup を指定してください。  
-この設定はデータベースを利用するためデータベースとテーブルを準備する（後述）必要があります。  
+appsettings.json / appsettings.Development.json 파일에서 다음과 같이 설정하십시오.
+이 설정을 사용하려면 데이터베이스와 테이블을 미리 준비해야(뒤에 설명함) 합니다.
 
 ```
 "Dependency": {
@@ -95,8 +103,8 @@ IoC Containerに対するインジェクションモジュールの選択肢は�
 }
 ```
 
-Entity Framework を用いながらインメモリで動作させる選択肢もあります。
-次のように追加設定を行ってください。
+EntityFramework와 인메모리 데이터베이스를 모두 사용하는 것도 가능합니다.
+다음과 같이 설정을 추가하십시오.
 
 ```
 "Dependency": {
@@ -109,12 +117,12 @@ Entity Framework を用いながらインメモリで動作させる選択肢も
 }
 ```
 
-## Database
+## 데이터베이스
 
-Entity Framework 及び SQL を用いた処理が利用するデータベースは SQL Server Express を想定しています。  
-データベースを利用したときの処理を確認したい場合は Entity Framework のコードファースト機能によりデータベースを準備します。  
+EntityFramework 및 SQL 쿼리를 사용하는 데이터베이스로 SQL Server Express를 사용합니다.
+데이터베이스를 사용하기 전에 먼저 EntityFramework의 코드 퍼스트 기능을 이용해 데이터베이스를 준비합니다.
 
-コードファーストでデータベースを準備する際にはまず appsetting.json / appsettings.Development.json を次のように EFDependencySetup を使用するように変更します。  
+코드 퍼스트 기능을 사용해 데이터베이스를 준비하려면 appsettings.json / appsettings.Development.json 파일의 설정을 다음과 같이 수정합니다.
 
 ```
 "Dependency": {
@@ -122,13 +130,13 @@ Entity Framework 及び SQL を用いた処理が利用するデータベース�
 }
 ```
 
-次に、パッケージマネージャコンソールで EFInfrastructure を対象にして、次のようにマイグレーションを生成してください。  
+그 다음, 패키지 매니저 콘솔에서 EFInfrastructure를 대상으로 다음과 같이 마이그레이션을 생성합니다.
 
 ```
 Add-Migration Initial
 ```
 
-その後、パッケージマネージャコンソールでデータベースの更新を行う（Update-Database コマンドを実行する）と itdddContext1 というデータベースが作成されます。  
+그리고 패키지 매니저 콘솔에서 데이터베이스를 업데이트합니다(Update-Database 명령 실행). 그러면 이름이 itdddContext1인 데이터베이스가 생성됩니다.
 
 ```
 Update-Database

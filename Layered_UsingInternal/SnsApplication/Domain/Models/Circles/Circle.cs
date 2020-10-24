@@ -32,7 +32,7 @@ namespace SnsApplication.Domain.Models.Circles
         internal void Join(User member, CircleFullSpecification fullSpec)
         {
             if (member == null) throw new ArgumentNullException(nameof(member));
-            if (fullSpec.IsSatisfiedBy(this)) throw new CircleFullException(Id, "サークルに所属しているメンバーが上限に達しています。");
+            if (fullSpec.IsSatisfiedBy(this)) throw new CircleFullException(Id, "서클에 소속 가능한 최대 인원을 초과함");
 
             Members.Add(member.Id);
         }
