@@ -29,7 +29,7 @@ namespace _18
             return Equals((FullName)obj);
         }
 
-        // C#ではEqualsをoverrideする際にGetHashCodeをoverrideするルールがある
+        // C#에서 Equals를 오버라이드하려면 GetHashCode를 함께 오버라이드 해야 한다
         public override int GetHashCode()
         {
             unchecked

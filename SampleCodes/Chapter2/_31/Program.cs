@@ -4,10 +4,10 @@
     {
         static void Main(string[] args)
         {
-            var jpy = new Money(1000, "JPY");
+            var jpy = new Money(1000, "KRW");
             var usd = new Money(10, "USD");
 
-            var result = jpy.Add(usd); // 例外が送出される
+            var result = jpy.Add(usd); // 예외 발생
         }
     }
 }

@@ -4,16 +4,16 @@
     {
         static void Main(string[] args)
         {
-            // 数字の変更
+            // 숫자값 수정
             var num = 0;
             num = 1;
 
-            // 文字の変更
+            // 문자값 수정
             var c = '0';
             c = 'b';
 
-            // 文字列の変更
-            var greet = "こんにちは";
+            // 문자열값 수정
+            var greet = "안녕하세요";
             greet = "hello";
         }
     }

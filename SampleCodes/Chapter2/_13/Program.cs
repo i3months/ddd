@@ -11,7 +11,7 @@ namespace _13
             Console.WriteLine('a' == 'a'); // true
             Console.WriteLine('a' == 'b'); // false
             Console.WriteLine("hello" == "hello"); // true
-            Console.WriteLine("hello" == "こんにちは"); // false
+            Console.WriteLine("hello" == "안녕하세요"); // false
         }
     }
 }

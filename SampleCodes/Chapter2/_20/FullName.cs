@@ -21,7 +21,7 @@ namespace _20
             if (ReferenceEquals(this, other)) return true;
             return FirstName == other.FirstName 
                    && LastName == other.LastName 
-                   && MiddleName == other.MiddleName; // 条件式の追加はここだけ
+                   && MiddleName == other.MiddleName; // 이곳의 조건식만 추가하면 된다
         }
 
         public override bool Equals(object obj)

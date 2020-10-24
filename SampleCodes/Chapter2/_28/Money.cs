@@ -18,7 +18,7 @@ namespace _28
         public Money Add(Money arg)
         {
             if (arg == null) throw new ArgumentNullException(nameof(arg));
-            if (currency != arg.currency) throw new ArgumentException($"通貨単位が異なります（this:{currency}, arg:{arg.currency}）");
+            if (currency != arg.currency) throw new ArgumentException($"화폐단위가 다름(this:{currency}, arg:{arg.currency}）");
 
             return new Money(amount + arg.amount, currency);
         }

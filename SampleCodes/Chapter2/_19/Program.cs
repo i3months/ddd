@@ -8,7 +8,7 @@
             var nameB = new FullName("masanobu", "", "naruse");
             var compareResult = nameA.FirstName == nameB.FirstName
                                 && nameA.LastName == nameB.LastName
-                                && nameA.MiddleName == nameB.MiddleName // 条件式を追加
+                                && nameA.MiddleName == nameB.MiddleName // 조건식이 추가됨
                 ;
         }
     }

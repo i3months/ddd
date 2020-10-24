@@ -6,10 +6,10 @@ namespace _07
     {
         static void Main(string[] args)
         {
-            var greet = "こんにちは";
-            Console.WriteLine(greet); // こんにちは が表示される
+            var greet = "안녕하세요";
+            Console.WriteLine(greet); // '안녕하세요'가 출력됨
             greet = "Hello";
-            Console.WriteLine(greet); // Hello が表示される
+            Console.WriteLine(greet); // Hello가 출력됨
         }
     }
 }

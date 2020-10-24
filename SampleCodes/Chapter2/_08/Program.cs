@@ -6,9 +6,9 @@ namespace _08
     {
         static void Main(string[] args)
         {
-            var greet = "こんにちは";
-            // greet.ChangeTo("Hello"); // このようなメソッドは本来存在しない
-            Console.WriteLine(greet); // Hello が表示される
+            var greet = "안녕하세요";
+            // greet.ChangeTo("Hello"); // 실제로는 이런 메서드가 없다
+            Console.WriteLine(greet); // Hello가 출력된다
         }
     }
 }

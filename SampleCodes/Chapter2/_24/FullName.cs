@@ -12,8 +12,8 @@ namespace _24
         {
             if (firstName == null) throw new ArgumentNullException(nameof(firstName));
             if (lastName == null) throw new ArgumentNullException(nameof(lastName));
-            if (!ValidateName(firstName)) throw new ArgumentException("許可されていない文字が使われています。", nameof(firstName));
-            if (!ValidateName(lastName)) throw new ArgumentException("許可されていない文字が使われています。", nameof(lastName));
+            if (!ValidateName(firstName)) throw new ArgumentException("허가되지 않은 문자가 사용됨", nameof(firstName));
+            if (!ValidateName(lastName)) throw new ArgumentException("허가되지 않은 문자가 사용됨", nameof(lastName));
 
             this.firstName = firstName;
             this.lastName = lastName;
@@ -21,7 +21,7 @@ namespace _24
 
         private bool ValidateName(string value)
         {
-            // アルファベットに限定する
+            // 사용가능한 문자를 알파벳으로 제한
             return Regex.IsMatch(value, @"^[a-zA-Z]+$");
         }
 

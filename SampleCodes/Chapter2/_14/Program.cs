@@ -9,8 +9,8 @@ namespace _14
             var nameA = new FullName("masanobu", "naruse");
             var nameB = new FullName("masanobu", "naruse");
 
-            // 別個のインスタンス同士の比較
-            Console.WriteLine(nameA.Equals(nameB)); // インスタンスを構成する属性が等価なのでtrue
+            // 두 인스턴스를 비교
+            Console.WriteLine(nameA.Equals(nameB)); // 인스턴스를 구성하는 속성이 같으므로 true
         }
     }
 }

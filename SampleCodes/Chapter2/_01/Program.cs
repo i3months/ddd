@@ -7,7 +7,7 @@ namespace _01
         static void Main(string[] args)
         {
             var fullName = "naruse masanobu";
-            Console.WriteLine(fullName); // naruse masanobu が表示される
+            Console.WriteLine(fullName); // naruse masanobu라는 값을 출력
         }
     }
 }

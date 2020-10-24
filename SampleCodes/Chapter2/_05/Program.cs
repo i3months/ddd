@@ -7,7 +7,7 @@ namespace _05
         static void Main(string[] args)
         {
             var fullName = new FullName("masanobu", "naruse");
-            Console.WriteLine(fullName.LastName); // naruse が表示される
+            Console.WriteLine(fullName.LastName); // naruse가 출력됨
         }
     }
 }

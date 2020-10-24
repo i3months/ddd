@@ -12,7 +12,7 @@ namespace _17
             var compareResult = nameA.Equals(nameB);
             Console.WriteLine(compareResult);
 
-            // 演算子のオーバーライド機能を活用することも選択肢に入る
+            // 연산자 오버라이드를 활용할 수도 있다
             var compareResult2 = nameA == nameB;
             Console.WriteLine(compareResult2);
         }

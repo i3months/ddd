@@ -10,11 +10,11 @@ namespace _37
 
             if (userName.Length >= 3)
             {
-                // 正常な値なので処理を継続する
+                // 유효한 값이므로 처리를 계속한다
             }
             else
             {
-                throw new Exception("異常な値です");
+                throw new Exception("유효하지 않은 값");
             }
         }
     }
