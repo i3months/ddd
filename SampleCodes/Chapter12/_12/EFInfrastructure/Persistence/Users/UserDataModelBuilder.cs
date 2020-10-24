@@ -5,7 +5,7 @@ namespace _12.EFInfrastructure.Persistence.Users
 {
     public class UserDataModelBuilder : IUserNotification
     {
-        // 通知されたデータはインスタンス変数で保持される
+        // 전달된 데이터는 인스턴스 변수로 저장된다
         private UserId id;
         private UserName name;
         public void Id(UserId id)
@@ -16,7 +16,7 @@ namespace _12.EFInfrastructure.Persistence.Users
         {
             this.name = name;
         }
-        // 通知されたデータからデータモデルを生成するメソッド
+        // 전달받은 데이터로 데이터 모델을 생성하는 메서드
         public UserDataModel Build()
         {
             return new UserDataModel

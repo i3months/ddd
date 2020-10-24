@@ -8,7 +8,7 @@ namespace _03.SnsDomain.Models.Circles
     {
         private readonly CircleId id;
         private User owner;
-        // メンバーは非公開にできる
+        // 소속된 사용자 목록을 비공개로 돌린다
         private List<User> members;
         private CircleName name;
 

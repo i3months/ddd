@@ -35,14 +35,14 @@ namespace _20.SnsApplication.Circles
                 var owner = userRepository.Find(ownerId);
                 if (owner == null)
                 {
-                    throw new UserNotFoundException(ownerId, "サークルのオーナーとなるユーザが見つかりませんでした。");
+                    throw new UserNotFoundException(ownerId, "서클장이 될 사용자가 없음");
                 }
 
                 var name = new CircleName(command.Name);
                 var circle = circleFactory.Create(name, owner);
                 if (circleService.Exists(circle))
                 {
-                    throw new CanNotRegisterCircleException(circle, "サークルは既に存在しています。");
+                    throw new CanNotRegisterCircleException(circle, "이미 등록된 서클임");
                 }
 
                 circleRepository.Save(circle);
@@ -58,14 +58,14 @@ namespace _20.SnsApplication.Circles
                 var member = userRepository.Find(memberId);
                 if (member == null)
                 {
-                    throw new UserNotFoundException(memberId, "ユーザが見つかりませんでした。");
+                    throw new UserNotFoundException(memberId, "사용자를 찾지 못했음");
                 }
 
                 var id = new CircleId(command.CircleId);
                 var circle = circleRepository.Find(id);
                 if (circle == null)
                 {
-                    throw new CircleNotFoundException(id, "サークルが見つかりませんでした。");
+                    throw new CircleNotFoundException(id, "서클을 찾지 못했음");
                 }
 
                 if (circle.IsFull())
@@ -84,7 +84,7 @@ namespace _20.SnsApplication.Circles
             using (var transaction = new TransactionScope())
             {
                 var id = new CircleId(command.Id);
-                // この時点でUserのインスタンスが再構築されるが
+                // 이 지점에서 User 객체가 복원되지만
                 var circle = circleRepository.Find(id);
                 if (circle == null)
                 {
@@ -97,7 +97,7 @@ namespace _20.SnsApplication.Circles
                     circle.ChangeName(name);
                     if (circleService.Exists(circle))
                     {
-                        throw new CanNotRegisterCircleException(circle, "サークルは既に存在しています。");
+                        throw new CanNotRegisterCircleException(circle, "이미 등록된 서클임");
                     }
                 }
 
@@ -105,7 +105,7 @@ namespace _20.SnsApplication.Circles
 
                 transaction.Complete();
 
-                // Userのインスタンスは使われることなく捨てられる
+                // User 객체를 사용하지 않고 처리가 끝남
             }
         }
     }

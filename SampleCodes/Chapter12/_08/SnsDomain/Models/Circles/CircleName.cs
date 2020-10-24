@@ -7,8 +7,8 @@ namespace _08.SnsDomain.Models.Circles
         public CircleName(string value)
         {
             if (value == null) throw new ArgumentNullException(nameof(value));
-            if (value.Length < 3) throw new ArgumentException("サークル名は3文字以上です。", nameof(value));
-            if (value.Length > 20) throw new ArgumentException("サークル名は20文字以下です。", nameof(value));
+            if (value.Length < 3) throw new ArgumentException("서클명은 3글자 이상이어야 함", nameof(value));
+            if (value.Length > 20) throw new ArgumentException("서클명은 20글자 이하이어야 함", nameof(value));
 
             Value = value;
         }

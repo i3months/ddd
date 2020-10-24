@@ -32,7 +32,7 @@ namespace _10.EFInfrastructure.Persistence.Users
 
         public void Save(User user)
         {
-            // ゲッターを利用しデータの詰め替えをしている
+            // 게터를 이용해 데이터를 옮겨 담는다
             var userDataModel = new UserDataModel
             {
                 Id = user.Id.Value,

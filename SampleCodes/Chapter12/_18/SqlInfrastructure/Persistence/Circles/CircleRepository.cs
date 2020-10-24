@@ -10,7 +10,7 @@ namespace _18.SqlInfrastructure.Persistence.Circles
 
         public void Save(Circle circle)
         {
-            // ユーザ集約に対する更新処理を行う
+            // 사용자 애그리게이션에 대한 업데이트 처리
             using (var command = connection.CreateCommand())
             {
                 command.CommandText = "UPDATE users SET username = @username WHERE id = @id";

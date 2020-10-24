@@ -4,7 +4,7 @@ namespace _14.SnsDomain.Models.Users
 {
     public class User
     {
-        // インスタンス変数はいずれも非公開
+        // 인스턴스 변수는 모두 비공개
         private readonly UserId id;
         private UserName name;
 
@@ -26,7 +26,7 @@ namespace _14.SnsDomain.Models.Users
 
         public void Notify(IUserNotification note)
         {
-            // 内部データを通知
+            // 내부 데이터를 전달
             note.Id(id);
             note.Name(name);
         }

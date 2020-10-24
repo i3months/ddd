@@ -34,14 +34,14 @@ namespace _06.SnsApplication.Circles
                 var owner = userRepository.Find(ownerId);
                 if (owner == null)
                 {
-                    throw new UserNotFoundException(ownerId, "サークルのオーナーとなるユーザが見つかりませんでした。");
+                    throw new UserNotFoundException(ownerId, "서클장이 될 사용자가 없음");
                 }
 
                 var name = new CircleName(command.Name);
                 var circle = circleFactory.Create(name, owner);
                 if (circleService.Exists(circle))
                 {
-                    throw new CanNotRegisterCircleException(circle, "サークルは既に存在しています。");
+                    throw new CanNotRegisterCircleException(circle, "이미 등록된 서클임");
                 }
 
                 circleRepository.Save(circle);
@@ -57,23 +57,23 @@ namespace _06.SnsApplication.Circles
                 var member = userRepository.Find(memberId);
                 if (member == null)
                 {
-                    throw new UserNotFoundException(memberId, "ユーザが見つかりませんでした。");
+                    throw new UserNotFoundException(memberId, "사용자를 찾지 못했음");
                 }
 
                 var id = new CircleId(command.CircleId);
                 var circle = circleRepository.Find(id);
                 if (circle == null)
                 {
-                    throw new CircleNotFoundException(id, "サークルが見つかりませんでした。");
+                    throw new CircleNotFoundException(id, "서클을 찾지 못했음");
                 }
 
-                // サークルのオーナーを含めて３０名か確認
+                // 서클에 소속된 사용자가 서클장을 포함 30명 이하인지 확인
                 if (circle.Members.Count >= 29)
                 {
                     throw new CircleFullException(id);
                 }
 
-                // メンバーを追加する
+                // 가입 처리
                 circle.Members.Add(member);
                 circleRepository.Save(circle);
                 transaction.Complete();
