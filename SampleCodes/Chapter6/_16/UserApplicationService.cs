@@ -18,7 +18,7 @@
             );
             if (userService.Exists(user))
             {
-                throw new CanNotRegisterUserException(user, "ユーザは既に存在しています。");
+                throw new CanNotRegisterUserException(user, "이미 등록된 사용자임");
             }
 
             userRepository.Save(user);
@@ -38,7 +38,7 @@
             return userData;
         }
 
-        // メールアドレスを引数で受け取る
+        // 이메일 주소를 인자로 받음
         public void Update(string userId, string name = null, string mailAddress = null)
         {
             var targetId = new UserId(userId);
@@ -49,18 +49,18 @@
                 throw new UserNotFoundException(targetId);
             }
 
-            // メールアドレスだけを更新するため、ユーザ名が指定されないことを考慮
+            // 이메일 주소만 수정하므로 사용자명이 지정되지 않은 경우를 고려함
             if (name != null)
             {
                 var newUserName = new UserName(name);
                 user.ChangeName(newUserName);
                 if (userService.Exists(user))
                 {
-                    throw new CanNotRegisterUserException(user, "ユーザは既に存在しています。");
+                    throw new CanNotRegisterUserException(user, "이미 등록된 사용자임");
                 }
             }
 
-            // メールアドレスを変更できるように
+            // 이메일 주소를 수정하는 경우
             if (mailAddress != null)
             {
                 var newMailAddress = new MailAddress(mailAddress);

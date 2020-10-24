@@ -10,15 +10,15 @@ namespace _17
         }
 
         public string Id { get; }
-        /// <summary> データが設定されると変更される </summary>
+        /// <summary> 지정된 값으로 해당 항목이 수정됨 </summary>
         public string Name { get; set; }
-        /// <summary> データが設定されると変更される </summary>
+        /// <summary> 지정된 값으로 해당 항목이 수정됨 </summary>
         public string MailAddress { get; set; }
     }
 
     namespace AnotherOne
     {
-        // 次のようにコンストラクタで名前やメールアドレスが任意であることを主張させてもよい
+        // 생성자 메서드를 통해 이름 혹은 이메일 주소가 지정되지 않았음을 나타낼 수도 있다
         public class UserUpdateCommand
         {
             public UserUpdateCommand(string id, string name = null, string mailAddress = null)
@@ -29,8 +29,8 @@ namespace _17
             }
 
             public string Id { get; }
-            public string Name { get; } // この場合セッターがなくなる
-            public string MailAddress { get; } // この場合セッターがなくなる
+            public string Name { get; } // 이런 경우 세터가 필요 없다
+            public string MailAddress { get; } // 이런 경우 세터가 필요 없다
         }
     }
 }

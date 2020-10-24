@@ -21,7 +21,7 @@ namespace _05
             );
             if (userService.Exists(user))
             {
-                throw new CanNotRegisterUserException(user, "ユーザは既に存在しています。");
+                throw new CanNotRegisterUserException(user, "이미 등록된 사용자임");
             }
 
             userRepository.Save(user);

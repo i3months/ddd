@@ -4,7 +4,7 @@ namespace _29
 {
     public class User
     {
-        // はじめてインスタンスを生成する際に利用する
+        // 인스턴스를 처음 생성할 때 사용한다
         public User(UserName name, MailAddress mailAddress)
         {
             if (name == null) throw new ArgumentNullException(nameof(name));
@@ -15,7 +15,7 @@ namespace _29
             MailAddress = mailAddress;
         }
 
-        // インスタンスを再構成する際に利用する
+        // 인스턴스를 복원할 때 사용한다
         public User(UserId id, UserName name, MailAddress mailAddress)
         {
             if (id == null) throw new ArgumentNullException(nameof(id));

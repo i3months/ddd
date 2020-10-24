@@ -6,7 +6,7 @@ namespace _24
     {
         public UserId(string value)
         {
-            if (string.IsNullOrEmpty(value)) throw new ArgumentException("valueがnullまたは空文字です");
+            if (string.IsNullOrEmpty(value)) throw new ArgumentException("value가 null이거나 빈 문자열임");
 
             Value = value;
         }

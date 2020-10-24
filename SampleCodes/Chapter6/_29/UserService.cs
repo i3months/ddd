@@ -11,7 +11,7 @@
 
         public bool Exists(User user)
         {
-            // 重複のルールをユーザ名からメールアドレスに変更
+            // 사용자 중복 기준을 사용자명에서 이메일 주소로 변경
             // var duplicatedUser = userRepository.Find(user.Name);
             var duplicatedUser = userRepository.Find(user.MailAddress);
 

@@ -12,14 +12,14 @@
             var user = new User(new UserId(id), new UserName("test-user"));
             repository.Save(user);
 
-            // ユーザ名変更だけを行うように
+            // 사용자명만 변경함
             var updateNameCommand = new UserUpdateCommand(id)
             {
-                Name = "naruse"
+                Name = "john"
             };
             userApplicationService.Update(updateNameCommand);
 
-            // メールアドレス変更だけを行うように
+            // 이메일 주소만 변경함
             var updateMailAddressCommand = new UserUpdateCommand(id)
             {
                 MailAddress = "xxxx@example.com"

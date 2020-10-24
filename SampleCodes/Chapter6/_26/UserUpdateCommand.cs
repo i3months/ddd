@@ -8,9 +8,9 @@
         }
 
         public string Id { get; }
-        /// <summary> データが設定されると変更される </summary>
+        /// <summary> 지정된 값으로 해당 항목이 수정됨 </summary>
         public string Name { get; set; }
-        /// <summary> データが設定されると変更される </summary>
+        /// <summary> 지정된 값으로 해당 항목이 수정됨 </summary>
         public string MailAddress { get; set; }
     }
 }

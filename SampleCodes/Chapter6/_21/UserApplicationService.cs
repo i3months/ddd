@@ -18,7 +18,7 @@
             );
             if (userService.Exists(user))
             {
-                throw new CanNotRegisterUserException(user, "ユーザは既に存在しています。");
+                throw new CanNotRegisterUserException(user, "이미 등록된 사용자임");
             }
 
             userRepository.Save(user);
@@ -54,7 +54,7 @@
                 user.ChangeName(newUserName);
                 if (userService.Exists(user))
                 {
-                    throw new CanNotRegisterUserException(user, "ユーザは既に存在しています。");
+                    throw new CanNotRegisterUserException(user, "이미 등록된 사용자임");
                 }
             }
 
@@ -68,7 +68,7 @@
 
             if (user == null)
             {
-                // 対象が見つからなかったため退会成功とする
+                // 탈퇴 대상 사용자가 발견되지 않았다면 탈퇴 처리 성공으로 간주한다
                 return;
             }
 

@@ -18,7 +18,7 @@
             );
             if (userService.Exists(user))
             {
-                throw new CanNotRegisterUserException(user, "ユーザは既に存在しています。");
+                throw new CanNotRegisterUserException(user, "이미 등록된 사용자임");
             }
 
             userRepository.Save(user);
@@ -30,7 +30,7 @@
             var user = userRepository.Find(targetId);
 
             // var userData = new UserData(user.Id.Value, user.Name.Value);
-            // コンストラクタの引数が増える
+            // 생성자 메서드의 인자가 늘어남
             var userData = new UserData(user.Id.Value, user.Name.Value, user.MailAddress.Value);
             return userData;
         }
