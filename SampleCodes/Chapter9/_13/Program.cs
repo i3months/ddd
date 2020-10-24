@@ -11,7 +11,7 @@ namespace _13
             var user = new User(new UserId("test-id"), new UserName("test-name"));
 
             var circle = new Circle(
-                user.Id, // ゲッターによりユーザのIDを取得
+                user.Id, // 게터를 통해 사용자 ID를 받아옴
                 new CircleName("my circle")
             );
         }

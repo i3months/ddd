@@ -4,12 +4,12 @@ namespace _07
 {
     class InMemoryUserFactory : IUserFactory
     {
-        // 現在のID
+        // 마지막으로 발행된 식별자
         private int currentId;
 
         public User Create(UserName name)
         {
-            // ユーザが生成されるたびにインクリメントする
+            // 사용자를 생성할 때마다 1씩 증가
             currentId++;
 
             return new User(

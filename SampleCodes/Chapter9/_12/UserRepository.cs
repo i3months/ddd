@@ -38,7 +38,7 @@ namespace _12
             }
         }
 
-        // リレーショナルデータベースを利用しているが
+        // 객체 저장에 관계형 데이터베이스를 사용하지만
         public User Find(UserId id)
         {
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
@@ -66,7 +66,7 @@ namespace _12
             }
         }
 
-        // 採番処理はリレーショナルデータベースを利用していない
+        // 자동 번호 매기기에는 다른 기술을 사용함
         public UserId NextIdentity()
         {
             var response = numberingApi.Request();

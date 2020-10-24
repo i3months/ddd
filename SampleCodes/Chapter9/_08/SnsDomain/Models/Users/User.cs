@@ -7,7 +7,7 @@ namespace _08.SnsDomain.Models.Users
         private readonly UserId id;
         private UserName name;
 
-        // コンストラクタがあることがわかるのみ
+        // 생성자 메서드가 있다는 것만 알 수 있다
         public User(UserId id, UserName name)
         {
             if (id == null) throw new ArgumentNullException(nameof(id));

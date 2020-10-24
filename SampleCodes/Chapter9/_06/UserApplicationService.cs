@@ -18,7 +18,7 @@ namespace _06
         public void Register(UserRegisterCommand command)
         {
             var userName = new UserName(command.Name);
-            // ファクトリによってインスタンスを生成する
+            // 팩토리를 이용해 인스턴스를 생성
             var user = userFactory.Create(userName);
 
             if (userService.Exists(user))

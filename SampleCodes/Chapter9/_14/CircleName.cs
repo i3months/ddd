@@ -7,8 +7,8 @@ namespace _14
         public CircleName(string value)
         {
             if (value == null) throw new ArgumentNullException(nameof(value));
-            if (value.Length < 3) throw new ArgumentException("サークル名は３文字以上です");
-            if (value.Length < 20) throw new ArgumentException("サークル名は２０文字以下です");
+            if (value.Length < 3) throw new ArgumentException("서클명은 3글자 이상이어야 함");
+            if (value.Length < 20) throw new ArgumentException("서클명은 20글자 이하이어야 함");
 
             Value = value;
         }

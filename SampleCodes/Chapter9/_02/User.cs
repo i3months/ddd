@@ -12,13 +12,13 @@ namespace _02
         public User(UserName name)
         {
             string seqId;
-            // データべースの接続設定からコネクションを作成して
+            // 데이터베이스 접속 설정에서 커넥션을 설정
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             using (var connection = new SqlConnection(connectionString))
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
-                // 採番テーブルを利用し採番処理を行っている
+                // 번호 매기기용 테이블을 이용해 번호를 매김
                 command.CommandText = "SELECT seq = (NEXT VALUE FOR UserSeq)";
                 using (var reader = command.ExecuteReader())
                 {
