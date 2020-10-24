@@ -14,7 +14,7 @@ namespace _01
             var userService = new UserService();
             if (userService.Exists(user))
             {
-                throw new Exception($"{userName}は既に存在しています");
+                throw new Exception($"{userName}은 이미 존재하는 사용자명임");
             }
             var connectionString = ConfigurationManager.ConnectionStrings["FooConnection"].ConnectionString;
             using (var connection = new SqlConnection(connectionString))

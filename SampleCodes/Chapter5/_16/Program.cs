@@ -6,12 +6,12 @@
         {
             var userRepository = new InMemoryUserRepository();
 
-            var user = new User(new UserName("Naruse"));
+            var user = new User(new UserName("John"));
 
-            // ここでインスタンスをそのままリポジトリに保存してしまうと
+            // 여기서 인스턴스를 바로 리포지토리에 저장하면
             userRepository.Save(user);
-            // インスタンスの操作がリポジトリに保存したインスタンスにまで影響する
-            user.ChangeUserName(new UserName("naruse"));
+            // 인스턴스에 대한 조작이 리포지토리에 저장된 객체에도 영향을 미친다
+            user.ChangeUserName(new UserName("john"));
         }
     }
 }

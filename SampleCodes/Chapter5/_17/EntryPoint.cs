@@ -9,11 +9,11 @@ namespace _17
         {
             var userRepository = new InMemoryUserRepository();
             var program = new Program(userRepository);
-            program.CreateUser("nrs");
+            program.CreateUser("john");
 
-            // データを取り出して確認
+            // 리포지토리에서 데이터를 꺼내 확인한다
             var head = userRepository.Store.Values.First();
-            Assert.AreEqual("nrs", head.Name);
+            Assert.AreEqual("john", head.Name);
         }
     }
 }

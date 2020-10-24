@@ -13,7 +13,7 @@ namespace _07
 
         public bool Exists(User user)
         {
-            // ユーザ名により重複確認を行うという知識は失われている
+            // 중복 확인이 사용자명 기준이라는 지식이 도메인 객체에서 누락된다
             return userRepository.Exists(user);
         }
     }

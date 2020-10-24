@@ -8,7 +8,7 @@ namespace _28
         void Delete(User user);
         User Find(UserId id);
         User Find(UserName name);
-        // オーバーロードがサポートされていない言語の場合は命名によりバリエーションを増やす
+        // 오버로딩을 지원하지 않는 언어라면 이름을 바꿔가며 배리에이션을 만든다
         // User FindByUserName(UserName name);
     }
 }
