@@ -6,7 +6,7 @@
 
         public UserApplicationService()
         {
-            // ServiceLocator経由でインスタンスを取得する
+            // ServiceLocator를 통해 필요한 인스턴스를 받음
             this.userRepository = ServiceLocator.Resolve<IUserRepository>();
         }
 

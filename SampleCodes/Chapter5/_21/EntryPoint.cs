@@ -11,11 +11,11 @@ namespace _21
 
             var userRepository = new EFUserRepository(myContext);
             var program = new Program(userRepository);
-            program.CreateUser("naruse");
+            program.CreateUser("smith");
 
-            // データを取り出して確認
+            // 리포지토리에서 데이터를 꺼내 확인한다
             var head = myContext.Users.First();
-            Assert.AreEqual("naruse", head.Name);
+            Assert.AreEqual("smith", head.Name);
         }
     }
 }

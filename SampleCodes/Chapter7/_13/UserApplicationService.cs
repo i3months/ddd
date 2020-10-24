@@ -3,13 +3,13 @@
     public class UserApplicationService
     {
         private readonly IUserRepository userRepository;
-        // 新たなフィールドが追加された
+        // 새로운 속성이 추가됨
         private readonly IFooRepository fooRepository;
 
         public UserApplicationService()
         {
             this.userRepository = ServiceLocator.Resolve<IUserRepository>();
-            // ServiceLocator経由で取得している
+            // ServiceLocator를 통해 필요한 인스턴스를 받음
             this.fooRepository = ServiceLocator.Resolve<IFooRepository>();
         }
 

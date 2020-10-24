@@ -8,11 +8,11 @@ namespace _17
         {
             // IoC Container
             var serviceCollection = new ServiceCollection();
-            // 依存解決の設定を登録する
+            // 의존 관계 해소를 위한 설정 등록
             serviceCollection.AddTransient<IUserRepository, InMemoryUserRepository>();
             serviceCollection.AddTransient<UserApplicationService>();
 
-            // インスタンスはIoC Container経由で取得する
+            // IoC Container를 통해 필요한 인스턴스를 받아옴
             var provider = serviceCollection.BuildServiceProvider();
             var userApplicationService = provider.GetService<UserApplicationService>();
         }

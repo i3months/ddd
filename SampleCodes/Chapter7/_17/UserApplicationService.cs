@@ -4,7 +4,7 @@
     {
         private readonly IUserRepository userRepository;
         
-        // コンストラクタで依存を注入できるようにする
+        // 생성자 메서드를 통해 의존 관계를 주입함
         public UserApplicationService(IUserRepository userRepository)
         {
             this.userRepository = userRepository;

@@ -3,10 +3,10 @@
     public class UserApplicationService
     {
         private readonly IUserRepository userRepository;
-        // 新たにIFooRepositoryへの依存関係を追加する
+        // IFooRepository에 대한 의존 관계가 새로 추가됨
         private readonly IFooRepository fooRepository;
 
-        // コンストラクタで依存を注入できるようにする
+        // 생성자 메서드를 통해 의존 관계를 주입함
         public UserApplicationService(IUserRepository userRepository, IFooRepository fooRepository)
         {
             this.userRepository = userRepository;
