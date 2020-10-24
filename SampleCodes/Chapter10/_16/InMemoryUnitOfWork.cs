@@ -8,7 +8,7 @@ namespace _16
 {
     public class InMemoryUnitOfWork : IUnitOfWork
     {
-        // インメモリのリポジトリを利用している
+        // 인메모리 리포지토리를 사용함
         private InMemoryUserRepository userRepository;
 
         public IUserRepository UserRepository

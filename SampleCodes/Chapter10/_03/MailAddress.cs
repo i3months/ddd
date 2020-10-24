@@ -8,7 +8,7 @@ namespace _03
     {
         public MailAddress(string value)
         {
-            if (!IsValidEmail(value)) throw new ArgumentException(value + "はメールアドレスの形式ではありません");
+            if (!IsValidEmail(value)) throw new ArgumentException(value + "은 이메일주소 형식이 아님");
 
             Value = value;
         }

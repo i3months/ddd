@@ -22,7 +22,7 @@ namespace _14.Infrastructure
         public User Find(UserId id)
         {
             User user;
-            // ユーザを取得するコード
+            // 사용자 정보를 받아오는 코드
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
@@ -44,7 +44,7 @@ namespace _14.Infrastructure
                     }
                 }
             }
-            // 取得したユーザを保存
+            // 받아온 사용자를 저장
             var cloneInstance = Clone(user);
             cloned.Add(id, cloneInstance);
             return user;
@@ -53,7 +53,7 @@ namespace _14.Infrastructure
         public User Find(UserName name)
         {
             User user;
-            // ユーザを取得するコード
+            // 사용자 정보를 받아오는 코드 
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
@@ -75,7 +75,7 @@ namespace _14.Infrastructure
                     }
                 }
             }
-            // 取得したユーザを保存
+            // 받아온 사용자를 저장
             var cloneInstance = Clone(user);
             cloned.Add(user.Id, cloneInstance);
             return user;
@@ -100,7 +100,7 @@ namespace _14.Infrastructure
 
         private void SaveNew(User user)
         {
-            // UPSERT処理を行う
+            // UPSERT 쿼리를 실행
             using (var command = connection.CreateCommand())
             {
                 command.Transaction = transaction;
@@ -124,7 +124,7 @@ namespace _14.Infrastructure
 
         private void SaveUpdate(User recent, User latest)
         {
-            // 変化した項目に応じてUPDATE文を組み立てて実行
+            // 변경된 항목에 따라 UPDATE 쿼리를 만들어 실행
         }
 
         public void Delete(User user)

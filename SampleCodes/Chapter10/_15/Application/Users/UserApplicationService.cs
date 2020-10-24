@@ -12,7 +12,7 @@ namespace _15.Application.Users
 {
     public class UserApplicationService
     {
-        // ユニットオブワークを保持する
+        // 유닛오브워크 객체
         private readonly IUnitOfWork uow;
         private readonly IUserFactory userFactory; 
         private readonly UserService userService;
@@ -30,7 +30,7 @@ namespace _15.Application.Users
             var user = uow.UserRepository.Find(id);
             if (user == null)
             {
-                throw new UserNotFoundException(id, "ユーザが見つかりませんでした。");
+                throw new UserNotFoundException(id, "사용자를 찾지 못했음");
             }
 
             var data = new UserData(user);
@@ -52,7 +52,7 @@ namespace _15.Application.Users
 
             if (userService.Exists(user))
             {
-                throw new CanNotRegisterUserException(user, "ユーザは既に存在しています。");
+                throw new CanNotRegisterUserException(user, "이미 등록된 사용자임");
             }
 
             uow.UserRepository.Save(user);
@@ -75,7 +75,7 @@ namespace _15.Application.Users
 
                 if (userService.Exists(user))
                 {
-                    throw new CanNotRegisterUserException(user, "ユーザは既に存在しています。");
+                    throw new CanNotRegisterUserException(user, "이미 등록된 사용자임");
                 }
             }
 

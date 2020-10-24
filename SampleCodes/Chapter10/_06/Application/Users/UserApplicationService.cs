@@ -31,7 +31,7 @@ namespace _06.Application.Users
             var user = userRepository.Find(id);
             if (user == null)
             {
-                throw new UserNotFoundException(id, "ユーザが見つかりませんでした。");
+                throw new UserNotFoundException(id, "사용자를 찾지 못했음");
             }
 
             var data = new UserData(user);
@@ -48,7 +48,7 @@ namespace _06.Application.Users
 
         public void Register(UserRegisterCommand command)
         {
-            // コネクションからトランザクションを開始
+            // 커넥션을 통해 트랜잭션을 시작
             using (var transaction = connection.BeginTransaction())
             {
                 var name = new UserName(command.Name);
@@ -56,11 +56,11 @@ namespace _06.Application.Users
 
                 if (userService.Exists(user))
                 {
-                    throw new CanNotRegisterUserException(user, "ユーザは既に存在しています。");
+                    throw new CanNotRegisterUserException(user, "이미 등록된 사용자임");
                 }
 
                 userRepository.Save(user);
-                // 完了時にコミットを行う
+                // 처리가 완료되면 커밋
                 transaction.Commit();
             }
         }
@@ -81,7 +81,7 @@ namespace _06.Application.Users
 
                 if (userService.Exists(user))
                 {
-                    throw new CanNotRegisterUserException(user, "ユーザは既に存在しています。");
+                    throw new CanNotRegisterUserException(user, "이미 등록된 사용자임");
                 }
             }
 
