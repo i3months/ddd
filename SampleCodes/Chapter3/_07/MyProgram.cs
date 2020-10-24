@@ -15,11 +15,11 @@ namespace _07
         {
             if (leftUser.Equals(rightUser))
             {
-                Console.WriteLine("同一のユーザです");
+                Console.WriteLine("동일한 사용자임");
             }
             else
             {
-                Console.WriteLine("別のユーザです");
+                Console.WriteLine("서로 다른 사용자임");
             }
         }
     }

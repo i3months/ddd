@@ -4,7 +4,7 @@ namespace _05
 {
     class User
     {
-        private readonly UserId id; // 識別子
+        private readonly UserId id; // 식별자
         private string name;
 
         public User(UserId id, string name)
@@ -18,7 +18,7 @@ namespace _05
         public void ChangeUserName(string name)
         {
             if (name == null) throw new ArgumentNullException(nameof(name));
-            if (name.Length < 3) throw new ArgumentException("ユーザ名は３文字以上です。", nameof(name));
+            if (name.Length < 3) throw new ArgumentException("사용자명은 3글자 이상이어야 함", nameof(name));
 
             this.name = name;
         }
