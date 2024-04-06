@@ -118,3 +118,31 @@ ddd에서 복잡한객체의 생성 로직을 캡슐화하는 역할을 수행�
 전통적인 3계층 방식인 스프링에서 개발하는방식과 비슷하지만 .. 
 DDD는 애플리케이션의 모든 부분이 도메인 모델을 중심으로 구성함 
 도메인의 복잡성을 관리하고 표현하는 데 더 많은 초점을 둔다 
+
+애그리게이트는 DDD 에서 관련 객체를 하나의 그룹으로 묶어서 다루는 단위를 의미함 
+애그리게이트 루트가 애그리게이트 내 다른 객체들을 관리
+외부와의 상호작용은 루트를 통해 수행함 
+엔티티와 VO로 구성됨
+
+자바 JPA에서는 애그리게이트 루트를 엔티티 클래스로, 애그리게이트 내 다른 엔티티들을 연관 엔티티로 모델링함 
+
+import javax.persistence.*;
+import java.util.List;
+import java.util.UUID;
+
+@Entity
+public class Order {
+    @Id
+    @GeneratedValue
+    private UUID orderId;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OrderItem> orderItems;
+
+    @Embedded
+    private Address shippingAddress;
+    
+}
+
+
+이런식으로 사용.. 
